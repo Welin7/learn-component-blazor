@@ -1,0 +1,41 @@
+﻿@page "/"
+@rendermode InteractiveServer
+
+<PageTitle>Blazor - Manager of state and Create Components</PageTitle>
+
+<h1>Blazor - Manager of state and Create Components</h1>
+
+<ProgressCounter Value="@currentCount"></ProgressCounter>
+ 
+ <div class="mt-3">
+    <button class="btn btn-primary border-radius 10px" @onclick="increaseCount">Increase</button>
+    <button class="btn btn-warning border-radius 10px" @onclick="decrementCount">Decrement</button>
+    <button class="btn btn-danger border-radius 10px" @onclick="resetCount">Reset</button>
+ </div>   
+    
+
+@code {
+    private int currentCount = 0;
+
+    private void increaseCount()
+    {
+        if (currentCount < 100)
+            currentCount++;
+        else
+            currentCount = 100;    
+    }
+
+    private void decrementCount()
+    {
+        if (currentCount > 0)
+            currentCount--;
+        else
+            currentCount = 0;    
+    }
+
+    private void resetCount()
+    {
+        currentCount = 0;
+    }
+}
+

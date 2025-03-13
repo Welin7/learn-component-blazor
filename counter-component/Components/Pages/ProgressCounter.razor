@@ -1,0 +1,12 @@
+<div class="progress mt-2 mb-2" style="height: 30px;">
+    <div class="progress-bar" role="progressbar" style="width: @Value%" aria-valuenow="@Value" aria-valuemin="0" aria-valuemax="100">@Value%</div>
+</div>
+
+<div class="styleCounter p-2">
+    <h2>Counter: <strong>@Value</strong></h2>
+</div>
+
+@code {
+    [Parameter]
+    public int Value {get; set; } = 0;
+}
